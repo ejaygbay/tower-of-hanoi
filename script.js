@@ -11,12 +11,14 @@ const drawItems = () => {
     document.querySelector("#tower2").innerHTML = "";
     document.querySelector("#tower3").innerHTML = "";
     if (tower1.length > 0) {
+        console.log("t1:", tower1)
         tower1.reverse().forEach(ele => {
             let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
             document.querySelector("#tower1").insertAdjacentHTML("beforeend", html);
             margin_bottom += space;
         })
         margin_bottom = init_space;
+        console.log("t111:", tower1)
     }
 
     if (tower2.length > 0) {
@@ -40,6 +42,8 @@ const drawItems = () => {
     tower1.reverse();
     tower2.reverse();
     tower3.reverse();
+
+    console.log("t1222:", tower1)
 }
 
 drawItems();
@@ -72,42 +76,100 @@ const selectToPlay = (e) => {
 
         if (parent_ele_id === 'tower1') {
             if (area_to_play === 'tower2') {
-                tower1.splice(tower1.indexOf(item), 1);
-                tower2.push(item);
-                removeClass('is-playing');
-                drawItems();
+                if (tower2.length > 0) {
+                    if (tower2[tower2.length - 1] > item) {
+                        tower1.splice(tower1.indexOf(item), 1);
+                        tower2.push(item);
+                        removeClass('is-playing');
+                        drawItems();
+                    }
+                } else {
+                    tower1.splice(tower1.indexOf(item), 1);
+                    tower2.push(item);
+                    removeClass('is-playing');
+                    drawItems();
+                }
             } else if (area_to_play === 'tower3') {
-                tower1.splice(tower1.indexOf(item), 1);
-                tower3.push(item);
-                removeClass('is-playing');
-                drawItems();
+                if (tower3.length > 0) {
+                    if (tower3[tower3.length - 1] > item) {
+                        tower1.splice(tower1.indexOf(item), 1);
+                        tower3.push(item);
+                        removeClass('is-playing');
+                        drawItems();
+                    }
+                } else {
+                    tower1.splice(tower1.indexOf(item), 1);
+                    tower3.push(item);
+                    removeClass('is-playing');
+                    drawItems();
+                }
             }
         } else if (parent_ele_id === 'tower2') {
 
             if (area_to_play === 'tower1') {
-                tower2.splice(tower2.indexOf(item), 1);
-                tower1.push(item);
-                removeClass('is-playing');
-                drawItems();
+                if (tower1.length > 0) {
+                    if (tower1[tower1.length - 1] > item) {
+                        tower2.splice(tower2.indexOf(item), 1);
+                        tower1.push(item);
+                        removeClass('is-playing');
+                        drawItems();
+                    }
+                } else {
+                    tower2.splice(tower2.indexOf(item), 1);
+                    tower1.push(item);
+                    removeClass('is-playing');
+                    drawItems();
+                }
+
             } else if (area_to_play === 'tower3') {
-                tower2.splice(tower2.indexOf(item), 1);
-                tower3.push(item);
-                removeClass('is-playing');
-                drawItems();
+                if (tower3.length > 0) {
+                    if (tower3[tower3.length - 1] > item) {
+                        tower2.splice(tower2.indexOf(item), 1);
+                        tower3.push(item);
+                        removeClass('is-playing');
+                        drawItems();
+                    }
+                } else {
+                    tower2.splice(tower2.indexOf(item), 1);
+                    tower3.push(item);
+                    removeClass('is-playing');
+                    drawItems();
+                }
             }
 
         } else if (parent_ele_id === 'tower3') {
 
             if (area_to_play === 'tower1') {
-                tower3.splice(tower3.indexOf(item), 1);
-                tower1.push(item);
-                removeClass('is-playing');
-                drawItems();
+                if (tower1.length > 0) {
+                    if (tower1[tower1.length - 1] > item) {
+                        tower3.splice(tower3.indexOf(item), 1);
+                        tower1.push(item);
+                        removeClass('is-playing');
+                        drawItems();
+                    }
+                } else {
+                    tower3.splice(tower3.indexOf(item), 1);
+                    tower1.push(item);
+                    removeClass('is-playing');
+                    drawItems();
+                }
+
             } else if (area_to_play === 'tower2') {
-                tower3.splice(tower3.indexOf(item), 1);
-                tower2.push(item);
-                removeClass('is-playing');
-                drawItems();
+                if (tower2.length > 0) {
+                    if (tower2[tower2.length - 1] > item) {
+                        tower3.splice(tower3.indexOf(item), 1);
+                        tower2.push(item);
+                        removeClass('is-playing');
+                        drawItems();
+                    }
+                } else {
+                    tower3.splice(tower3.indexOf(item), 1);
+                    tower2.push(item);
+                    removeClass('is-playing');
+                    drawItems();
+                }
+
+
             }
         }
     }
