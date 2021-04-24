@@ -1,6 +1,11 @@
 body {
     box-sizing: border-box;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
 }
 
 .towers {
@@ -11,8 +16,18 @@ body {
 }
 
 .tower {
-    height: 100px;
+    height: 70vh;
     width: 98%;
     background: lightblue;
+    margin: 5px;
+}
+
+.label {
+    background: lightgreen;
+    width: 98%;
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px 0;
     margin: 5px;
 }
