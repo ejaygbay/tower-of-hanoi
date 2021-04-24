@@ -5,11 +5,18 @@ body {
     background: #FFF4A3;
 }
 
-h1 {
+h1,
+.moves {
     text-align: center;
     word-spacing: 6px;
     -webkit-text-stroke: medium;
     letter-spacing: 6px;
+}
+
+.moves {
+    letter-spacing: 4px;
+    margin-top: -14px;
+    padding-bottom: 10px;
 }
 
 .towers {

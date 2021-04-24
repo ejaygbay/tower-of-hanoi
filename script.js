@@ -12,6 +12,7 @@ const drawItems = () => {
     document.querySelector("#tower1").innerHTML = "";
     document.querySelector("#tower2").innerHTML = "";
     document.querySelector("#tower3").innerHTML = "";
+    document.querySelector("#moves").innerHTML = num_of_moves;
 
     if (tower1.length > 0) {
         tower1.forEach((ele, index) => {
