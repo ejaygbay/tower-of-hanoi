@@ -10,15 +10,18 @@ const drawItems = () => {
     document.querySelector("#tower1").innerHTML = "";
     document.querySelector("#tower2").innerHTML = "";
     document.querySelector("#tower3").innerHTML = "";
+
+    tower1.sort();
+    tower2.sort();
+    tower3.sort();
+
     if (tower1.length > 0) {
-        console.log("t1:", tower1)
         tower1.reverse().forEach(ele => {
             let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
             document.querySelector("#tower1").insertAdjacentHTML("beforeend", html);
             margin_bottom += space;
         })
         margin_bottom = init_space;
-        console.log("t111:", tower1)
     }
 
     if (tower2.length > 0) {
@@ -42,8 +45,6 @@ const drawItems = () => {
     tower1.reverse();
     tower2.reverse();
     tower3.reverse();
-
-    console.log("t1222:", tower1)
 }
 
 drawItems();
