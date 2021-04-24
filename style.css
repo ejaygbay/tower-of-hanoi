@@ -48,34 +48,52 @@ h1 {
     padding: 6px 0;
 }
 
-#item1 {
+.item:hover {
+    cursor: pointer;
+    background: pink;
+}
+
+#item-1 {
     width: 26%;
 }
 
-#item2 {
+#item-2 {
     width: 36%;
 }
 
-#item3 {
+#item-3 {
     width: 46%;
 }
 
-#item4 {
+#item-4 {
     width: 56%;
 }
 
-#item5 {
+#item-5 {
     width: 66%;
 }
 
-#item6 {
+#item-6 {
     width: 76%;
 }
 
-#item7 {
+#item-7 {
     width: 86%;
 }
 
-#item8 {
+#item-8 {
     width: 96%;
+}
+
+.is-playing {
+    animation: blink 0.2s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
