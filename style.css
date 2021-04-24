@@ -15,13 +15,6 @@ h1 {
     justify-content: space-evenly
 }
 
-.tower {
-    height: 70vh;
-    width: 98%;
-    background: lightblue;
-    margin: 5px;
-}
-
 .label {
     background: lightgreen;
     width: 98%;
@@ -29,5 +22,50 @@ h1 {
     font-weight: bolder;
     text-align: center;
     padding: 10px 0;
-    margin: 5px;
+    margin: 5px 0;
+}
+
+.tower {
+    position: relative;
+    height: 70vh;
+    width: 98%;
+    background: lightblue;
+    margin: 5px 0;
+}
+
+#tower1 {
+    display: grid;
+}
+
+.item {
+    background: yellow;
+    height: 20px;
+    margin-top: 5px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    justify-self: center;
+    margin-bottom: 6px;
+    font-size: 1.2em;
+    font-size: bolder;
+    text-align: center;
+}
+
+#item1 {
+    width: 66%;
+    margin-bottom: 78px;
+}
+
+#item2 {
+    width: 76%;
+    margin-bottom: 54px;
+}
+
+#item3 {
+    width: 86%;
+    margin-bottom: 30px;
+}
+
+#item4 {
+    width: 96%;
 }
