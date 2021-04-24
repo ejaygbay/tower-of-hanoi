@@ -31,9 +31,6 @@ h1 {
     width: 98%;
     background: lightblue;
     margin: 5px 0;
-}
-
-#tower1 {
     display: grid;
 }
 
@@ -45,27 +42,40 @@ h1 {
     width: 100%;
     bottom: 0;
     justify-self: center;
-    margin-bottom: 6px;
     font-size: 1.2em;
     font-size: bolder;
     text-align: center;
+    padding: 6px 0;
 }
 
 #item1 {
-    width: 66%;
-    margin-bottom: 78px;
+    width: 26%;
 }
 
 #item2 {
-    width: 76%;
-    margin-bottom: 54px;
+    width: 36%;
 }
 
 #item3 {
-    width: 86%;
-    margin-bottom: 30px;
+    width: 46%;
 }
 
 #item4 {
+    width: 56%;
+}
+
+#item5 {
+    width: 66%;
+}
+
+#item6 {
+    width: 76%;
+}
+
+#item7 {
+    width: 86%;
+}
+
+#item8 {
     width: 96%;
 }
