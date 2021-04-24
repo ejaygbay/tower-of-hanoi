@@ -1,0 +1,18 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.towers {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    background: pink;
+    justify-content: space-evenly
+}
+
+.tower {
+    height: 100px;
+    width: 98%;
+    background: lightblue;
+    margin: 5px;
+}
