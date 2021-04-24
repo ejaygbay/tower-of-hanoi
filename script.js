@@ -187,5 +187,9 @@ const selectToPlay = (e) => {
 
             }
         }
+
+        if (parent_ele_id === area_to_play) {
+            removeClass('is-playing')
+        }
     }
 }
