@@ -1,4 +1,4 @@
-let tower1 = [1, 2, 3, 4, 5, 6, 7, 8];
+let tower1 = [8, 7, 6, 5, 4, 3, 2, 1];
 let tower2 = [];
 let tower3 = [];
 let space = 40;
@@ -11,12 +11,8 @@ const drawItems = () => {
     document.querySelector("#tower2").innerHTML = "";
     document.querySelector("#tower3").innerHTML = "";
 
-    tower1.sort();
-    tower2.sort();
-    tower3.sort();
-
     if (tower1.length > 0) {
-        tower1.reverse().forEach(ele => {
+        tower1.forEach(ele => {
             let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
             document.querySelector("#tower1").insertAdjacentHTML("beforeend", html);
             margin_bottom += space;
@@ -25,7 +21,7 @@ const drawItems = () => {
     }
 
     if (tower2.length > 0) {
-        tower2.reverse().forEach(ele => {
+        tower2.forEach(ele => {
             let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
             document.querySelector("#tower2").insertAdjacentHTML("beforeend", html);
             margin_bottom += space;
@@ -34,17 +30,13 @@ const drawItems = () => {
     }
 
     if (tower3.length > 0) {
-        tower3.reverse().forEach(ele => {
+        tower3.forEach(ele => {
             let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
             document.querySelector("#tower3").insertAdjacentHTML("beforeend", html);
             margin_bottom += space;
         })
         margin_bottom = init_space;
     }
-
-    tower1.reverse();
-    tower2.reverse();
-    tower3.reverse();
 }
 
 drawItems();
