@@ -3,40 +3,62 @@ let tower2 = [];
 let tower3 = [];
 let space = 40;
 let init_space = 5;
+let num_of_moves = -1;
 
 
 const drawItems = () => {
     let margin_bottom = init_space;
+    num_of_moves += 1;
     document.querySelector("#tower1").innerHTML = "";
     document.querySelector("#tower2").innerHTML = "";
     document.querySelector("#tower3").innerHTML = "";
 
     if (tower1.length > 0) {
-        tower1.forEach(ele => {
-            let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
-            document.querySelector("#tower1").insertAdjacentHTML("beforeend", html);
+        tower1.forEach((ele, index) => {
+            let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px">${ele}</div>`;
+            let html2 = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
+
+            if (index === tower1.length - 1) {
+                document.querySelector("#tower1").insertAdjacentHTML("beforeend", html2);
+            } else {
+                document.querySelector("#tower1").insertAdjacentHTML("beforeend", html);
+            }
             margin_bottom += space;
         })
         margin_bottom = init_space;
     }
 
     if (tower2.length > 0) {
-        tower2.forEach(ele => {
-            let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
-            document.querySelector("#tower2").insertAdjacentHTML("beforeend", html);
+        tower2.forEach((ele, index) => {
+            let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px">${ele}</div>`;
+            let html2 = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
+
+            if (index === tower2.length - 1) {
+                document.querySelector("#tower2").insertAdjacentHTML("beforeend", html2);
+            } else {
+                document.querySelector("#tower2").insertAdjacentHTML("beforeend", html);
+            }
             margin_bottom += space;
         })
         margin_bottom = init_space;
     }
 
     if (tower3.length > 0) {
-        tower3.forEach(ele => {
-            let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
-            document.querySelector("#tower3").insertAdjacentHTML("beforeend", html);
+        tower3.forEach((ele, index) => {
+            let html = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px">${ele}</div>`;
+            let html2 = `<div class="item" id="item-${ele}" style="margin-bottom:${margin_bottom}px" onclick="getClickItemID(event)">${ele}</div>`;
+
+            if (index === tower3.length - 1) {
+                document.querySelector("#tower3").insertAdjacentHTML("beforeend", html2);
+            } else {
+                document.querySelector("#tower3").insertAdjacentHTML("beforeend", html);
+            }
             margin_bottom += space;
         })
         margin_bottom = init_space;
     }
+
+    console.log("Moves:", num_of_moves)
 }
 
 drawItems();
