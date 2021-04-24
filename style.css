@@ -2,40 +2,51 @@ body {
     box-sizing: border-box;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #FFF4A3;
 }
 
 h1 {
     text-align: center;
+    word-spacing: 6px;
+    -webkit-text-stroke: medium;
+    letter-spacing: 6px;
 }
 
 .towers {
     display: grid;
     grid-template-columns: repeat(3, 30%);
-    background: pink;
     justify-content: space-evenly
 }
 
 .label {
-    background: lightgreen;
-    width: 98%;
+    background: #adecde;
     font-size: 2em;
     font-weight: bolder;
     text-align: center;
     padding: 10px 0;
     margin: 5px 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .tower {
     position: relative;
     height: 70vh;
-    width: 98%;
-    background: lightblue;
-    margin: 5px 0;
+    background: turquoise;
+    margin-top: -5px;
     display: grid;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.tower,
+.label {
+    width: 98%;
+    box-shadow: 3px 3px 2px gray;
 }
 
 .item {
-    background: yellow;
+    background: #D9EEE1;
     height: 20px;
     margin-top: 5px;
     position: absolute;
@@ -46,11 +57,14 @@ h1 {
     font-size: bolder;
     text-align: center;
     padding: 6px 0;
+    border: solid 2px gray;
+    border-radius: 4px;
+    -webkit-text-stroke: medium;
 }
 
 .item:hover {
     cursor: pointer;
-    background: pink;
+    background: #F3ECEF;
 }
 
 #item-1 {
@@ -86,7 +100,7 @@ h1 {
 }
 
 .is-playing {
-    animation: blink 0.2s linear infinite;
+    animation: blink 0.5s linear infinite;
 }
 
 @keyframes blink {
