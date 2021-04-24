@@ -46,26 +46,9 @@ drawItems();
 
 const getClickItemID = (e) => {
     let id = e.target.id;
-    let parent_ele_id = e.target.parentElement.id;
-    let item = Number(id.split("-")[1]);
 
     removeClass('is-playing');
     addClass(id, 'is-playing');
-
-
-
-    if (parent_ele_id === 'tower1') {
-        // tower1.splice(tower1.indexOf(item), 1);
-        // tower2.push(item);
-        // drawItems()
-    }
-    // else if(parent_ele_id === 'tower2'){
-
-    // }else{
-
-    // }
-    // console.log(`${parent_ele_id}`)
-    // console.log("id=", position)
 }
 
 const addClass = (id, class_name) => {
@@ -76,5 +59,56 @@ const removeClass = (class_name) => {
     let playing = document.querySelector(`.${class_name}`);
     if (playing) {
         playing.classList.remove(class_name);
+    }
+}
+
+const selectToPlay = (e) => {
+    let area_to_play = e.target.id;
+    let playing = document.querySelector('.is-playing');
+
+    if (playing) {
+        let item = Number(playing.id.split("-")[1]);
+        let parent_ele_id = playing.parentElement.id;
+
+        if (parent_ele_id === 'tower1') {
+            if (area_to_play === 'tower2') {
+                tower1.splice(tower1.indexOf(item), 1);
+                tower2.push(item);
+                removeClass('is-playing');
+                drawItems();
+            } else if (area_to_play === 'tower3') {
+                tower1.splice(tower1.indexOf(item), 1);
+                tower3.push(item);
+                removeClass('is-playing');
+                drawItems();
+            }
+        } else if (parent_ele_id === 'tower2') {
+
+            if (area_to_play === 'tower1') {
+                tower2.splice(tower2.indexOf(item), 1);
+                tower1.push(item);
+                removeClass('is-playing');
+                drawItems();
+            } else if (area_to_play === 'tower3') {
+                tower2.splice(tower2.indexOf(item), 1);
+                tower3.push(item);
+                removeClass('is-playing');
+                drawItems();
+            }
+
+        } else if (parent_ele_id === 'tower3') {
+
+            if (area_to_play === 'tower1') {
+                tower3.splice(tower3.indexOf(item), 1);
+                tower1.push(item);
+                removeClass('is-playing');
+                drawItems();
+            } else if (area_to_play === 'tower2') {
+                tower3.splice(tower3.indexOf(item), 1);
+                tower2.push(item);
+                removeClass('is-playing');
+                drawItems();
+            }
+        }
     }
 }
