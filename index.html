@@ -10,15 +10,33 @@
 
 <body>
     <main>
-        <h1>TOWER OF HANOI</h1>
-        <div class="moves">MOVES: <span id="moves">0</span></div>
-        <section class="towers">
-            <div class="label">1</div>
-            <div class="label">2</div>
-            <div class="label">3</div>
-            <div class="tower" id="tower1" onclick="selectToPlay(event)"></div>
-            <div class="tower" id="tower2" onclick="selectToPlay(event)"></div>
-            <div class="tower" id="tower3" onclick="selectToPlay(event)"></div>
+        <section id="selection-section">
+            <div class="before-start">
+                <select id="select-num">
+                    <option value="">Select A Number</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <button id="start-btn">Start</button>
+            </div>
+        </section>
+        <section id="game-board">
+            <h1>TOWER OF HANOI</h1>
+            <div class="moves">MOVES: <span id="moves">0</span></div>
+            <section class="towers">
+                <div class="label">1</div>
+                <div class="label">2</div>
+                <div class="label">3</div>
+                <div class="tower" id="tower1" onclick="selectToPlay(event)"></div>
+                <div class="tower" id="tower2" onclick="selectToPlay(event)"></div>
+                <div class="tower" id="tower3" onclick="selectToPlay(event)"></div>
+            </section>
         </section>
     </main>
     <script src="script.js"></script>

@@ -2,7 +2,41 @@ body {
     box-sizing: border-box;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: #FFF4A3;
+    background: #CEE0DE;
+}
+
+#game-board {
+    display: none;
+}
+
+#selection-section {
+    display: grid;
+    justify-content: center;
+}
+
+.before-start {
+    border: solid 1px;
+    border-radius: 10px;
+    background: #40e0d0;
+    padding: 100px 50px;
+    margin-top: 30vh;
+}
+
+.before-start select {
+    font-size: 26px;
+    padding: 10px 20px;
+}
+
+.before-start button {
+    font-size: 24px;
+    padding: 10px 40px;
+    background: whitesmoke;
+    border-radius: 6px;
+}
+
+.before-start button:hover {
+    cursor: pointer;
+    background: #CEE0DE;
 }
 
 h1,
@@ -39,7 +73,7 @@ h1,
 .tower {
     position: relative;
     height: 70vh;
-    background: turquoise;
+    background: #40e0d0;
     margin-top: -5px;
     display: grid;
     border-bottom-left-radius: 6px;
@@ -71,7 +105,7 @@ h1,
 
 .item:hover {
     cursor: pointer;
-    background: #F3ECEF;
+    background: #CEE0DE;
 }
 
 #item-1 {
